@@ -1,0 +1,6 @@
+/*Removes default browser settings*/
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
