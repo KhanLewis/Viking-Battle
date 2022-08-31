@@ -10,6 +10,7 @@
 body {
     font-family: Aboreto, sans-serif;
     box-sizing: border-box;
+    background-color: #FAEBD7;
 }
 
 header {
@@ -22,6 +23,8 @@ header {
     font-weight: bold;
     font-size: 3rem;
     padding: 30px;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+
 }
 
 #rules {
@@ -29,31 +32,112 @@ header {
     right: 6%;
     top: 30%;
     font-weight: bolder;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
 
-#sub-heading {
+.sub-heading {
+    width: 100%;
     text-align: center;
     margin-top: 3rem;
-}
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
+
+
+}
 
 .weapons {
     display: flex;
     justify-content: center;
     overflow: hidden;
-   
+
 }
 
 .weapon {
     background: none;
-    border: none; 
+    border: none;
     outline: none;
     cursor: pointer;
     font-size: 3.7rem;
     padding: 5%;
-    transition: 100ms;
+    transition: 130ms;
 }
 
 .weapon:hover {
-    transform: scale(1.2);
+    transform: scale(1.5);
+}
+
+.game-area {
+    background-image: url(..//images/viking-background-image.jpg);
+    background-size: cover;
+    overflow: hidden;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    justify-content: center;
+    justify-items: center;
+    border: 5px solid red;
+    height: 65vh;
+    width: 65vw;
+    margin: 0 auto;
+}
+
+.game-area>img {
+    width: 300px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+}
+
+.game-area>h3 {
+    color: white;
+    position: absolute;
+    top: 32vh;
+    transform: translate(-50, -50);
+    font-size: 3rem;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+.game-area>h2 {
+    color: white;
+    font-weight: 900;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.408);
+    background-color: rgba(255, 252, 252, 0.07);
+
+}
+
+.game-area>p {
+    color: white;
+    font-weight: 900;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.438);
+    background-color: rgba(255, 252, 252, 0.807);
+
+}
+
+.score {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: 1.rem;
+    font-weight: bolder
+}
+
+footer {
+    height:100px;
+    margin-top:30px;
+}
+
+@media screen and (max-width: 740px){
+    .game-area>img{
+        width: 240px;
+    }
+    .game-area {
+        width:95vw;
+    }
+    .game-area > h2 {
+        font-size: 1.2rem;
+
+    }
 }
