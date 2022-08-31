@@ -1,6 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
 /*Removes default browser settings*/
 * {
     margin: 0;
     padding: 0;
     border: none;
+}
+
+body {
+    font-family: Aboreto, sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    height: 100px;
+    position: relative;
+}
+
+#heading {
+    text-align: center;
+    font-weight: bold;
+    font-size: 3rem;
+    padding: 30px;
+}
+
+#rules {
+    position: absolute;
+    right: 6%;
+    top: 30%;
+    font-weight: bolder;
+}
+
+#sub-heading {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+
+.weapons {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+   
+}
+
+.weapon {
+    background: none;
+    border: none; 
+    outline: none;
+    cursor: pointer;
+    font-size: 3.7rem;
+    padding: 5%;
+    transition: 100ms;
+}
+
+.weapon:hover {
+    transform: scale(1.2);
 }

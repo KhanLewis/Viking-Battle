@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A viking battle game!" />
     <meta name="keywords" content="Viking, Game, Battle, Fun" />
-    
+
 <!--Link to Stylesheet-->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Viking Battle!</title>
@@ -15,8 +15,27 @@
 
 <body>
     <header>
-        <h1>Viking Battle!</h1>
+        <h1 id="heading">Viking Battle!</h1>
+        <span id="rules">rules</span>
     </header>
+    <div id="sub-heading">
+        <h2>Choose your weapon!</h2>
+    </div>
+    <div class ="weapons">
+        <button class="weapon">⚔️</button>
+        <button class="weapon">🛡️</button>
+        <button class="weapon">🪓</button>
+    </div>
+    <div class ="game-area">
+        <span id="user-healthbar"><p><3</p></span>
+        <h2>User</h2>
+        <span id="computer-healthbar"><p><3</p></span>
+        <h2>computer</h2>
+        <img>
+        <img>
+    </div>
+    <div id="won">0</div>
+    <div id="lost">0</div>
 
 </body>
 
