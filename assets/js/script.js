@@ -18,14 +18,11 @@ for (playersWeapon of weapons) {
 
   playersWeapon.addEventListener('click', function () {
     if (this.getAttribute("data-weapons") === "sword") {
-      alert("you clicked sword")
-
+      
     } else if (this.getAttribute("data-weapons") === "shield") {
-      alert("You clicked shield")
-
+      
     } else if (this.getAttribute("data-weapons") === "axe") {
-      alert("You clicked axe")
-
+      
     } else {
       console.log('ERROR WITH WEAPON SELECTION')
     }
@@ -53,45 +50,71 @@ function playGame(playersWeapon) {
   };
   console.log(computersWeapon)
 
-  incrementScore()
+  incrementScore();
+  playersHealth();
+  displayMessage();
 }
 
 
 
 function incrementScore() {
+
+// a draw 
   if (playersWeapon === computersWeapon) {
     console.log('its a draw');
+    alert(`Its a Draw! you both chose ${playersWeapon}`)
     ++battlesWon.innerText;
     ++battlesLost.innerText 
 
-  }else if(playersWeapon === 'sword' && computersWeapon === 'shield'){
-    console.log('computer wins');
-    ++battlesLost.innerText;
+// chances for player to win
 
   }else if(playersWeapon === 'axe' && computersWeapon === 'shield'){
     console.log('player wins');
+    alert(`YES You won , You chose ${playersWeapon} and your opponent chose ${computersWeapon}`)
     ++battlesWon.innerText;
 
   }else if(playersWeapon === 'shield' && computersWeapon === 'sword'){
     console.log('player wins');
+    alert(`YES You won , You chose ${playersWeapon} and your opponent chose ${computersWeapon}`)
     ++battlesWon.innerText;
 
   }else if(playersWeapon === 'sword' && computersWeapon === 'axe'){
     console.log('player wins');
+    alert(`YES You won , You chose ${playersWeapon} and your opponent chose ${computersWeapon}`)
     ++battlesWon.innerText;
 
-  }else if(playersWeapon === 'shield' && computersWeapon === 'sword'){
-    console.log('player wins');
-    ++battlesWon.innerText;
-    
+// chance for computer to win 
+
+  }else if(playersWeapon === 'sword' && computersWeapon === 'shield'){
+    console.log('computer wins');
+    alert(`OH NO,You lost! You chose ${playersWeapon} and your opponent chose ${computersWeapon}`)
+    ++battlesLost.innerText;
+
   }else if(playersWeapon === 'shield' && computersWeapon === 'axe'){
     console.log('computer wins');
+    alert(`OH NO,You lost! You chose ${playersWeapon} and your opponent chose ${computersWeapon}`)
     ++battlesLost.innerText;
 
   }else if(playersWeapon === 'axe' && computersWeapon === 'sword'){
     console.log('computer wins');
+    alert(`OH NO,You lost! You chose ${playersWeapon} and your opponent chose ${computersWeapon}`)
     ++battlesLost.innerText;
   }
-
+  
 }
+
+
+function playersHealth(){
+  if (playerHealthBar == 0) {
+    gameOver()
+  }else if(playerHealthBar == 1){
+    playerHealthBar.innerText = '❤️';
+  }
+  }
+  
+  // for(heart of playerHealthBar){
+  //   if(++battlesLost.innerText){
+  //     heart.remove(innerText)
+  //     }
+  // }
 
