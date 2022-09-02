@@ -16,23 +16,25 @@
 <body>
     <header>
         <h1 id="heading">Viking Battle!</h1>
-        <span id="rules">rules</span>
+        <button id="rules">
+        <span>Rules</span>
+        </button>
     </header>
     <div class="sub-heading">
         <h2>Choose your weapon!</h2>
     </div>
     <div class ="weapons">
-        <button class="weapon">⚔️</button>
-        <button class="weapon">🛡️</button>
-        <button class="weapon">🪓</button>
+        <button aria-label="sword"class="weapon" data-weapons="sword">⚔️</button>
+        <button aria-label="shield" class="weapon" data-weapons="shield">🛡️</button>
+        <button aria-label="axe" class="weapon" data-weapons="axe">🪓</button>
     </div>
     <div class ="game-area">
         <h2>User</h2>
         <h2>computer</h2>
-        <span id="user-healthbar"><p>❤️❤️❤️</p></span>
+        <span id="player-healthbar"><p>❤️❤️❤️</p></span>
         <span id="computer-healthbar"><p>❤️❤️❤️</p></span>
-        <img src="assets/images/character1.png" alt="viking character 1">
-        <img src="assets/images/character2.png" alt="viking character 2">
+        <img id="player" src="assets/images/character1.png" alt="viking character Player">
+        <img id="computer" src="assets/images/character2.png" alt="viking character Computer">
         <h3>vs</h3>
     </div>
     <div class="score">
@@ -44,6 +46,7 @@
         <h2>Onwards to Valhalla!</h2>
     </div>
 </footer>
+<script src="assets/js/script.js"></script>
 </body>
 
 </html>
