@@ -19,10 +19,18 @@
         <button id="rules">
         <span>Rules</span>
         </button>
+        <div class="hidden-rules"> <h4>Welcome to Viking Battle!</h4>
+            <ul>
+                <li>RULE 1: Sword beats Axe</li>
+                <li>RULE 2: Shield beats Sword</li>
+                <li>RULE 3: Axe beats Shield</li>
+            </ul>
+        </div>
     </header>
     <div class="sub-heading">
         <h2>Choose your weapon!</h2>
     </div>
+    <!-- shows the interactive buttons for the user to click and play game-->
     <div class ="weapons">
         <button aria-label="sword"class="weapon" data-weapons="sword">⚔️</button>
         <button aria-label="shield" class="weapon" data-weapons="shield">🛡️</button>
@@ -37,8 +45,10 @@
         <img id="computer" src="assets/images/character2.png" alt="viking character Computer">
         <h3>vs</h3>
     </div>
+    <!--Displays the score beneath the game-area-->
     <div class="score">
     <p>BATTLES WON: <span id="won">0</span></p>
+    <p>BATTLES DRAW: <span id="draw">0</span></p>
     <p>BATTLES LOST: <span id="lost">0</span></p>
     </div>
 <footer>
@@ -46,6 +56,7 @@
         <h2>Onwards to Valhalla!</h2>
     </div>
 </footer>
+<!-- link to javascript-->
 <script src="assets/js/script.js"></script>
 </body>
 

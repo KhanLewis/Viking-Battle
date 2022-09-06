@@ -8,36 +8,32 @@ const player = document.getElementById('player');
 const computer = document.getElementById('computer');
 const battlesWon = document.getElementById('won');
 const battlesLost = document.getElementById('lost');
+const battlesDraw = document.getElementById('draw')
 const playerHealthBar = document.getElementById('player-healthbar');
 const computerHealthBar = document.getElementById('computer-healthbar');
 let playersWeapon;
 let randomWeapon;
 let computersWeapon;
 
-for (playersWeapon of weapons) {
+/** 
+ *  Adds event listner to the buttons so the user can select a weapon
+ * upon user clicking a chosen weapon initiates the game function.
+*/
 
+for (playersWeapon of weapons) {
   playersWeapon.addEventListener('click', function () {
-    if (this.getAttribute("data-weapons") === "sword") {
-      
-    } else if (this.getAttribute("data-weapons") === "shield") {
-      
-    } else if (this.getAttribute("data-weapons") === "axe") {
-      
-    } else {
-      console.log('ERROR WITH WEAPON SELECTION')
-    }
     playersWeapon = this.getAttribute("data-weapons");
     console.log(playersWeapon)
     playGame(playersWeapon)
   })
-
-
-
 }
 
+/**
+ * This enables the computer to select a random weapon
+ * aswell as basic game function
+ */
 
 function playGame(playersWeapon) {
-
   randomWeapon = Math.floor(Math.random() * weapons.length);
   if (randomWeapon === 0) {
     computersWeapon = "sword";
@@ -55,66 +51,60 @@ function playGame(playersWeapon) {
   displayMessage();
 }
 
-
-
+/**
+ * Adds points to battles won/lost or drawn.
+ */
 function incrementScore() {
 
-// a draw 
+  // A Draw 
   if (playersWeapon === computersWeapon) {
     console.log('its a draw');
     alert(`Its a Draw! you both chose ${playersWeapon}`)
-    ++battlesWon.innerText;
-    ++battlesLost.innerText 
+      ++battlesDraw.innerText;
 
-// chances for player to win
+    // chances for player to win
 
-  }else if(playersWeapon === 'axe' && computersWeapon === 'shield'){
+  } else if (playersWeapon === 'axe' && computersWeapon === 'shield') {
     console.log('player wins');
     alert(`YES You won , You chose ${playersWeapon} and your opponent chose ${computersWeapon}`)
-    ++battlesWon.innerText;
+      ++battlesWon.innerText;
 
-  }else if(playersWeapon === 'shield' && computersWeapon === 'sword'){
+  } else if (playersWeapon === 'shield' && computersWeapon === 'sword') {
     console.log('player wins');
     alert(`YES You won , You chose ${playersWeapon} and your opponent chose ${computersWeapon}`)
-    ++battlesWon.innerText;
+      ++battlesWon.innerText;
 
-  }else if(playersWeapon === 'sword' && computersWeapon === 'axe'){
+  } else if (playersWeapon === 'sword' && computersWeapon === 'axe') {
     console.log('player wins');
     alert(`YES You won , You chose ${playersWeapon} and your opponent chose ${computersWeapon}`)
-    ++battlesWon.innerText;
+      ++battlesWon.innerText;
 
-// chance for computer to win 
+    // chance for computer to win 
 
-  }else if(playersWeapon === 'sword' && computersWeapon === 'shield'){
+  } else if (playersWeapon === 'sword' && computersWeapon === 'shield') {
     console.log('computer wins');
     alert(`OH NO,You lost! You chose ${playersWeapon} and your opponent chose ${computersWeapon}`)
-    ++battlesLost.innerText;
+      ++battlesLost.innerText;
 
-  }else if(playersWeapon === 'shield' && computersWeapon === 'axe'){
+  } else if (playersWeapon === 'shield' && computersWeapon === 'axe') {
     console.log('computer wins');
     alert(`OH NO,You lost! You chose ${playersWeapon} and your opponent chose ${computersWeapon}`)
-    ++battlesLost.innerText;
+      ++battlesLost.innerText;
 
-  }else if(playersWeapon === 'axe' && computersWeapon === 'sword'){
+  } else if (playersWeapon === 'axe' && computersWeapon === 'sword') {
     console.log('computer wins');
     alert(`OH NO,You lost! You chose ${playersWeapon} and your opponent chose ${computersWeapon}`)
-    ++battlesLost.innerText;
+      ++battlesLost.innerText;
   }
-  
+
 }
 
-
-function playersHealth(){
+// function to remove health from lost battles.
+function playersHealth() {
   if (playerHealthBar == 0) {
     gameOver()
-  }else if(playerHealthBar == 1){
-    playerHealthBar.innerText = '❤️';
+  } else if (playerHealthBar == 1) {
+    
   }
-  }
-  
-  // for(heart of playerHealthBar){
-  //   if(++battlesLost.innerText){
-  //     heart.remove(innerText)
-  //     }
-  // }
+}
 
